@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/deep_ash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|top"
+            android:src="@android:drawable/ic_dialog_info"
+            android:layout_margin="16dp"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_300"
+            android:background="@drawable/ic_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="@dimen/dimen_100"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginLeft="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:src="@drawable/video"
+            android:onClick="refresh"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintVertical_bias="0.19999999" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/selectvideo"
+            app:icon="@android:drawable/ic_menu_camera"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            app:iconGravity="start"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_64"
+            android:layout_marginStart="@dimen/dimen_32"
+            android:layout_marginLeft="@dimen/dimen_32"
+            android:layout_marginTop="@dimen/dimen_32"
+            android:layout_marginEnd="@dimen/dimen_32"
+            android:layout_marginRight="@dimen/dimen_32"
+            android:text="@string/select_video"
+            android:textColor="@color/white"
+            android:onClick="showPictureDialog"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/downloadvideo"
+            app:icon="@android:drawable/ic_input_get"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            app:iconGravity="start"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_64"
+            android:layout_marginStart="@dimen/dimen_32"
+            android:layout_marginLeft="@dimen/dimen_32"
+            android:layout_marginTop="@dimen/dimen_32"
+            android:layout_marginEnd="@dimen/dimen_32"
+            android:layout_marginRight="@dimen/dimen_32"
+            android:text="@string/download_video"
+            android:textColor="@color/white"
+            android:onClick="beginDownload"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selectvideo" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/merge"
+            app:icon="@android:drawable/ic_input_add"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_64"
+            android:layout_marginStart="@dimen/dimen_32"
+            android:layout_marginLeft="@dimen/dimen_32"
+            android:layout_marginTop="@dimen/dimen_32"
+            android:layout_marginEnd="@dimen/dimen_32"
+            android:layout_marginRight="@dimen/dimen_32"
+            android:text="@string/merge_upload"
+            android:textColor="@color/white"
+            app:iconGravity="start"
+            android:onClick="mergeVideos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/downloadvideo" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <include layout="@layout/progress_overlay"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

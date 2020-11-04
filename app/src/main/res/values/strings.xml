@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Videomerger</string>
+    <string name="select_video">Select Video</string>
+    <string name="download_video">Download Video</string>
+    <string name="merge_upload">Merge and Upload</string>
+
+</resources>
